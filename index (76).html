@@ -1,0 +1,283 @@
+<!DOCTYPE html> 
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="מרכז חדשנות AI - מהמחשבה למוצר פיזי">
+    <title>מרכז חדשנות AI 🌟</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(45deg, #99ff99, #66ccff);
+            --secondary-gradient: linear-gradient(45deg, #ffcc66, #ff6666);
+            --primary-button: #33cc33;
+            --primary-button-hover: #009900;
+            --container-bg: rgba(255, 255, 255, 0.95);
+            --accent-color: #ff9900;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Alef', sans-serif;
+            background: var(--primary-gradient);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: right;
+            padding: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background: var(--container-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease-out;
+        }
+
+        .active-section {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            color: var(--accent-color);
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            color: #555;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            vertical-align: middle;
+            margin: 0 0.2em;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary-button);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            margin: 1rem 0;
+        }
+
+        .button:hover {
+            background: var(--primary-button-hover);
+            transform: translateY(-2px);
+        }
+
+        .steps {
+            margin: 2rem 0;
+        }
+
+        .step {
+            margin: 1rem 0;
+            padding-right: 2.5rem;
+            position: relative;
+        }
+
+        .step::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--primary-button);
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 1rem 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .personal-note {
+            padding: 1rem;
+            background: var(--secondary-gradient);
+            color: white;
+            border-radius: 10px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: justify;
+        }
+
+        .personal-note a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .personal-note a:hover {
+            text-decoration: underline;
+        }
+
+        .unique-number {
+            display: none;
+            padding: 1rem;
+            background: var(--secondary-gradient);
+            color: white;
+            border-radius: 10px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .unique-number.visible {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 1rem;
+            }
+
+            .button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="step1" class="container active-section">
+        <h1>שלב 1: חשיבה על רעיון <span class="emoji">💡</span></h1>
+        <p>זה הזמן לחלום! חשבו על רעיון חדשני שיכול לשנות את העולם או לשפר את החיים.</p>
+        <div class="personal-note">
+            <p>כבעל ניסיון בתחום החדשנות, אני כאן לעזור לכם להפוך את הרעיון שלכם למציאות. <a href="javascript:void(0);" onclick="showNumber(event)">לחץ כאן לקבלת סיוע</a>.</p>
+        </div>
+        <div class="video-container">
+            <iframe src="URL_לסרטון_הסברי_על_שלב_1" title="סרטון שלב 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <button class="button" onclick="switchStep('step2')">הבא <span class="emoji">➡️</span></button>
+    </div>
+
+    <div id="step2" class="container hidden">
+        <h1>שלב 2: שיפור הרעיון בעזרת AI <span class="emoji">🤖</span></h1>
+        <p>היעזרו ביכולות AI כדי לחדד, לשפר ולהוסיף פרטים לרעיון שלכם.</p>
+        <div class="personal-note">
+            <p>אני מציע שירותים מותאמים לשיפור רעיונות בעזרת AI. <a href="javascript:void(0);" onclick="showNumber(event)">צרו קשר</a> לליווי אישי.</p>
+        </div>
+        <div class="video-container">
+            <iframe src="URL_לסרטון_הסברי_על_שלב_2" title="סרטון שלב 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <button class="button" onclick="switchStep('step3')">הבא <span class="emoji">➡️</span></button>
+    </div>
+
+    <div id="step3" class="container hidden">
+        <h1>שלב 3: יצירת סקיצה דיגיטלית <span class="emoji">🖼️</span></h1>
+        <p>הפכו את הרעיון שלכם לדגם דיגיטלי בעזרת תוכנות עיצוב מתקדמות.</p>
+        <div class="personal-note">
+            <p>יש לי ניסיון בהפיכת רעיונות לדגמים דיגיטליים. <a href="javascript:void(0);" onclick="showNumber(event)">לחץ כאן</a> לדוגמאות וייעוץ.</p>
+        </div>
+        <div class="video-container">
+            <iframe src="URL_לסרטון_הסברי_על_שלב_3" title="סרטון שלב 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <button class="button" onclick="switchStep('step4')">הבא <span class="emoji">➡️</span></button>
+    </div>
+
+    <div id="step4" class="container hidden">
+        <h1>שלב 4: בחירת חומרים וייצור <span class="emoji">🏭</span></h1>
+        <p>בחרו את החומרים המתאימים ביותר והתחילו בייצור.</p>
+        <div class="personal-note">
+            <p>מתמחה בבחירת חומרים ובייצור מותאם אישית. <a href="javascript:void(0);" onclick="showNumber(event)">צרו קשר</a> לסיוע בשלב זה.</p>
+        </div>
+        <div class="video-container">
+            <iframe src="URL_לסרטון_הסברי_על_שלב_4" title="סרטון שלב 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <button class="button" onclick="switchStep('step5')">הבא <span class="emoji">➡️</span></button>
+    </div>
+
+    <div id="step5" class="container hidden">
+        <h1>שלב 5: קבלת המוצר הפיזי <span class="emoji">🎉</span></h1>
+        <p>המוצר שלכם מוכן! קבלו אותו בידיים ותתחילו להפיץ אותו לעולם.</p>
+        <div class="personal-note">
+            <p>הגעתם לשלב האחרון? אני מזמין אתכם לשתף אותי בהצלחות שלכם או לקבל ייעוץ נוסף על צעדים הבאים. <a href="javascript:void(0);" onclick="showNumber(event)">צרו קשר</a>.</p>
+        </div>
+        <div class="video-container">
+            <iframe src="URL_לסרטון_הסברי_על_שלב_5" title="סרטון שלב 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <button class="button" onclick="switchStep('step1')">התחל מחדש <span class="emoji">🔄</span></button>
+    </div>
+
+    <div id="uniqueNumber" class="unique-number">
+        <a href="https://wa.me/message/BKYPYTEWC7LFA1" style="color: white; text-decoration: none;" target="_blank">
+            לחץ כאן לסיוע WhatsApp: <strong>optionsMessage Dream Craft Vibes</strong>
+        </a>
+    </div>
+
+    <script>
+        function switchStep(stepToShow) {
+            const steps = ['step1', 'step2', 'step3', 'step4', 'step5'];
+            steps.forEach(step => {
+                const element = document.getElementById(step);
+                if (step === stepToShow) {
+                    element.classList.remove('hidden');
+                    setTimeout(() => element.classList.add('active-section'), 50);
+                } else {
+                    element.classList.remove('active-section');
+                    setTimeout(() => element.classList.add('hidden'), 300);
+                }
+            });
+        }
+
+        function showNumber(event) {
+            event.preventDefault();
+            const numberElement = document.getElementById('uniqueNumber');
+            if (!numberElement.classList.contains('visible')) {
+                numberElement.classList.add('visible');
+            } else {
+                numberElement.classList.remove('visible');
+            }
+        }
+    </script>
+</body>
+</html>
